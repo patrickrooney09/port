@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  /* background-image: url("manhattanbridge.jpg"); */
+  /* background-repeat: no-repeat;
+  background-size: auto;
+  background-size: cover; */
+
+  margin: 0px;
+}
+
+nav {
+  color: white;
+  height: 100%;
+  position: fixed;
+  border-radius: 5px;
+  left: 0;
+}
+
+.opening-page {
+  min-height: 100vh;
+  background-image: url("manhattanbridge.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-shadow: rgb(10, 10, 9) 2px 0 1px;
+}
+
+.profile-pic {
+  border-radius: 80px;
+  margin: 10px;
+}
+
+.body-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  margin: 0;
+}
+h4 {
+  margin: 0;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  font-size: 25px;
+  width: 400px;
+}
+
+.about-me {
+  color: black;
+}
