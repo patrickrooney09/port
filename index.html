@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="./styles.css" />
     <title>Patrick Rooney Portfolio</title>
   </head>
@@ -11,16 +12,104 @@
     <nav>
       <img src="./IMG_4146.JPG" width="200" class="profile-pic" />
       <h3>Patrick Rooney</h3>
-      <p>About Me</p>
-      <p>Projects</p>
-      <p>Get in touch</p>
+      <p
+        class="nav-links"
+        id="home"
+        onmouseover="hover(this)"
+        onmouseout="unhover(this)"
+      >
+        <img class="icon" id="home-img" src="icons/png/home-img.png" /><a
+          href="#title"
+          >Home</a
+        >
+      </p>
+      <p
+        class="nav-links"
+        id="about-me"
+        onmouseover="hover(this)"
+        onmouseout="unhover(this)"
+      >
+        <img
+          class="icon"
+          id="about-me-img"
+          src="icons/png/about-me-img.png"
+        />About Me
+      </p>
+      <p
+        class="nav-links"
+        id="projects"
+        onmouseover="hover(this)"
+        onmouseout="unhover(this)"
+      >
+        <img
+          class="icon"
+          id="projects-img"
+          src="icons/png/projects-img.png"
+        />Projects
+      </p>
+      <p
+        class="nav-links"
+        id="skills"
+        onmouseover="hover(this)"
+        onmouseout="unhover(this)"
+      >
+        <img
+          class="icon"
+          id="skills-img"
+          src="icons/png/skills-img.png"
+        />Skills
+      </p>
+      <p
+        class="nav-links"
+        id="contact"
+        onmouseover="hover(this)"
+        onmouseout="unhover(this)"
+      >
+        <img class="icon" id="contact-img" src="icons/png/contact-img.png" />Get
+        in touch
+      </p>
     </nav>
     <div class="opening-page">
-      <div class="title">
+      <button id="dark-mode-button" onClick="darkMode()">
+        <img id="dark-mode-icon" src="icons/png/day-and-night.png" />
+      </button>
+
+      <div id="title">
         <h1>Patrick Rooney</h1>
         <h4>Software Engineer</h4>
       </div>
     </div>
-    <div class="about-me"><h1>About me</h1></div>
+    <div id="about-me-section">
+      <h1>About me</h1>
+      <div id="about-me-text-and-pic">
+        <ul id="about-me-text">
+          <li>
+            Brooklyn based software engineer with a background in performing
+            arts.
+          </li>
+          <li>
+            Recent graduate of Fullstack Academy. Partook in the Future Code
+            Fellowship Program.
+          </li>
+          <li>
+            Passionate about web development and the future of AI technology.
+          </li>
+          <li>Values curiosity, creativity, and collaboration.</li>
+          <li>Chess enthusiast… but you’ll probably beat me.</li>
+        </ul>
+        <img src="beach-pic.jpeg" id="beach-pic" />
+      </div>
+
+      <div>
+        <h1>Projects</h1>
+      </div>
+      <div>
+        <h1>Skills</h1>
+      </div>
+      <div>
+        <h1>Get in touch</h1>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
