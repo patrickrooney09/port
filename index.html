@@ -9,9 +9,10 @@
     <title>Patrick Rooney Portfolio</title>
   </head>
   <body>
-    <nav>
+    <nav id="navbar">
       <img src="./IMG_4146.JPG" width="200" class="profile-pic" />
       <h3>Patrick Rooney</h3>
+
       <p
         class="nav-links"
         id="home"
@@ -69,6 +70,7 @@
         in touch
       </p>
     </nav>
+
     <div class="opening-page">
       <button id="dark-mode-button" onClick="darkMode()">
         <img id="dark-mode-icon" src="icons/png/day-and-night.png" />
@@ -80,36 +82,113 @@
       </div>
     </div>
     <div id="about-me-section">
-      <h1>About me</h1>
+      <!-- <h1>About</h1> -->
       <div id="about-me-text-and-pic">
         <ul id="about-me-text">
+          <!-- <h1>about</h1> -->
           <li>
-            Brooklyn based software engineer with a background in performing
-            arts.
+            Patrick is a Brooklyn based software engineer with a background in
+            performing arts.
           </li>
-          <li>
-            Recent graduate of Fullstack Academy. Partook in the Future Code
-            Fellowship Program.
-          </li>
+          <li>A Recent graduate of Fullstack Academy.</li>
+          <li>Partook in the Future Code Fellowship Program.</li>
           <li>
             Passionate about web development and the future of AI technology.
           </li>
           <li>Values curiosity, creativity, and collaboration.</li>
-          <li>Chess enthusiast… but you’ll probably beat me.</li>
+          <li>Chess enthusiast… but you’ll probably beat him.</li>
         </ul>
         <img src="beach-pic.jpeg" id="beach-pic" />
       </div>
 
-      <div>
-        <h1>Projects</h1>
+    <!-- <div> -->
+      <!-- <h1>Projects</h1>
+      <h2>Rehearse</h2> -->
+      <!-- <div class="projects">
+          <img
+            src="project-images-and-gifs/rehearse-home-page.png"
+            class="rehearse-images"
+          />
+        </div> -->
+      <div class="carousel">
+        <button class="carousel_button carousel_button--left is-hidden">
+          <img src="icons/png/back.png" alt="back button" />
+        </button>
+        <div class="carousel_track-container">
+          <ul class="carousel_track">
+            <li class="carousel_slide current-slide">
+              <img
+                src="project-images-and-gifs/rehearse-home-page.png"
+                class="carousel-image"
+              />
+            </li>
+            <li class="carousel_slide">
+              <img
+                src="project-images-and-gifs/rehearse-build-scene.png"
+                class="carousel-image"
+              />
+            </li>
+            <li class="carousel_slide">
+              <img
+                src="project-images-and-gifs/rehearse-run-lines.png"
+                class="carousel-image"
+              />
+            </li>
+          </ul>
+        </div>
+        <button class="carousel_button carousel_button--right">
+          <img src="icons/png/next.png" alt="forward button" />
+        </button>
+        <div class="carousel_nav">
+          <button class="carousel_indicator current-slide"></button>
+          <button class="carousel_indicator"></button>
+          <button class="carousel_indicator"></button>
+        </div>
       </div>
-      <div>
-        <h1>Skills</h1>
-      </div>
-      <div>
-        <h1>Get in touch</h1>
-      </div>
+
+      <!-- <div class="carousel">
+        <button class="carousel_button carousel_button--left is-hidden">
+          <img src="icons/png/back.png" alt="back button" />
+        </button>
+        <div class="carousel_track-container">
+          <ul class="carousel_track">
+            <li class="carousel_slide current-slide">
+              <img
+                src="project-images-and-gifs/rehearse-home-page.png"
+                class="carousel-image"
+              />
+            </li>
+            <li class="carousel_slide">
+              <img
+                src="project-images-and-gifs/rehearse-build-scene.png"
+                class="carousel-image"
+              />
+            </li>
+            <li class="carousel_slide">
+              <img
+                src="project-images-and-gifs/rehearse-run-lines.png"
+                class="carousel-image"
+              />
+            </li>
+          </ul>
+        </div>
+        <button class="carousel_button carousel_button--right">
+          <img src="icons/png/next.png" alt="forward button" />
+        </button>
+        <div class="carousel_nav">
+          <button class="carousel_indicator current-slide"></button>
+          <button class="carousel_indicator"></button>
+          <button class="carousel_indicator"></button>
+        </div>
+      </div> -->
+    <!-- </div> -->
+    <div>
+      <h1>Skills</h1>
     </div>
+    <div>
+      <h1>Get in touch</h1>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
