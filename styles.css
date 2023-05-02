@@ -244,3 +244,16 @@ li {
 .is-hidden {
   display: none;
 }
+
+/* #test-button {
+  color: white;
+}
+
+#test-div {
+  color: black;
+  background-color: white;
+} */
+
+.project-selector {
+  color: white;
+}

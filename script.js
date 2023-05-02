@@ -1,3 +1,66 @@
+// first thing I want to do: add elements via js
+const rehearseFileNames = [
+  "project-images-and-gifs/rehearse-home-page.png",
+  "project-images-and-gifs/rehearse-build-scene.png",
+  "project-images-and-gifs/rehearse-run-lines.png",
+];
+
+const diagonAlleyFileNames = [
+  "project-images-and-gifs/diagon-alley-home-page.png",
+  "project-images-and-gifs/diagon-alley-cart-and-checkout.png",
+  "project-images-and-gifs/diagon-alley-shop.png",
+];
+const createCarousel = (fileNames) => {
+  const carousel = document.querySelector(".carousel_track-container");
+  const carouselTrack = document.createElement("ul");
+  carouselTrack.setAttribute("class", "carousel_track");
+  carousel.appendChild(carouselTrack);
+
+  const carouselNav = document.createElement("div");
+  carouselNav.setAttribute("class", "carousel_nav");
+  document.querySelector(".carousel").appendChild(carouselNav);
+
+  fileNames.forEach((currentImage, index) => {
+    const carousel = document.querySelector(".carousel_track");
+    const carouselSlide = document.createElement("li");
+
+    const img = document.createElement("img");
+    img.src = currentImage;
+    img.setAttribute("class", "carousel-image");
+
+    carouselSlide.setAttribute("class", "carousel_slide");
+    if (index === 0) {
+      // carouselSlide.setAttribute("class", "current-slide");
+      carouselSlide.classList.add("current-slide");
+    }
+    carouselSlide.appendChild(img);
+
+    carousel.appendChild(carouselSlide);
+
+    const carouselDot = document.createElement("button");
+    carouselDot.setAttribute("class", "carousel_indicator");
+    if (index === 0) {
+      // carouselDot.setAttribute("class", "current-slide");
+      carouselDot.classList.add("current-slide");
+    }
+    carouselNav.appendChild(carouselDot);
+  });
+};
+createCarousel(rehearseFileNames);
+
+let track = document.querySelector(".carousel_track");
+let slides = Array.from(track.children);
+let slideWidth = slides[0].getBoundingClientRect().width;
+const setSlidePosition = (slide, index) => {
+  slide.style.left = slideWidth * index + "px";
+};
+slides.forEach(setSlidePosition);
+
+const nextButton = document.querySelector(".carousel_button--right");
+const prevButton = document.querySelector(".carousel_button--left");
+const dotsNav = document.querySelector(".carousel_nav");
+const dots = Array.from(dotsNav.children);
+
 function darkMode() {
   let element = document.getElementsByClassName("opening-page");
   element[0].classList.toggle("dark-mode");
@@ -12,20 +75,17 @@ const unhover = (element) => {
   element.setAttribute("src", `icons/png/${element.id}.png`);
 };
 
-const track = document.querySelector(".carousel_track");
-const slides = Array.from(track.children);
-const nextButton = document.querySelector(".carousel_button--right");
-const prevButton = document.querySelector(".carousel_button--left");
-const dotsNav = document.querySelector(".carousel_nav");
-const dots = Array.from(dotsNav.children);
-
-const slideWidth = slides[0].getBoundingClientRect().width;
+const projectButtons = [
+  ...document.querySelectorAll(".project-selector"),
+].forEach((currentButton) => {
+  currentButton.addEventListener("click", () => {
+    if (currentButton.innerText === "Diagon Alley Online") {
+      createCarousel(diagonAlleyFileNames);
+    }
+  });
+});
 
 // arrange slides next to one another
-const setSlidePosition = (slide, index) => {
-  slide.style.left = slideWidth * index + "px";
-};
-slides.forEach(setSlidePosition);
 
 const moveToSlide = (track, currentSlide, targetSlide) => {
   track.style.transform = "translateX(-" + targetSlide.style.left + ")";
@@ -91,3 +151,22 @@ dotsNav.addEventListener("click", (e) => {
 
   hideShowArrows(slides, prevButton, nextButton, targetIndex);
 });
+
+// const testDiv = document.getElementById("test-div");
+// const testButton = document.getElementById("test-button");
+
+// testButton.addEventListener("click", (event) => {
+//   // const image = new Image(600, 400);
+//   // image.src = "project-images-and-gifs/diagon-alley-cart-and-checkout.png";
+//   // testDiv.appendChild(image);
+//   console.log(testButton.innerHTML);
+//   if (testButton.innerText === "Diagon Alley") {
+
+//     const image2 = new Image(600, 400);
+//     image2.src = "project-images-and-gifs/diagon-alley-cart-and-checkout.png";
+//     testDiv.appendChild(image2);
+//     const image3 = new Image(600, 400);
+//     image3.src = "project-images-and-gifs/diagon-alley-cart-and-checkout.png";
+//     testDiv.appendChild(image3);
+//   }
+// });
