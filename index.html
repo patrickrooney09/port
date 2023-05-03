@@ -9,7 +9,7 @@
     <title>Patrick Rooney Portfolio</title>
   </head>
   <body>
-    <nav id="navbar">
+    <nav>
       <img src="./IMG_4146.JPG" width="200" class="profile-pic" />
       <h3>Patrick Rooney</h3>
 
@@ -70,53 +70,48 @@
         in touch
       </p>
     </nav>
+    <div class="website">
+      <div class="opening-page">
+        <button id="dark-mode-button" onClick="darkMode()">
+          <img id="dark-mode-icon" src="icons/png/day-and-night.png" />
+        </button>
 
-    <div class="opening-page">
-      <button id="dark-mode-button" onClick="darkMode()">
-        <img id="dark-mode-icon" src="icons/png/day-and-night.png" />
-      </button>
-
-      <div id="title">
-        <h1>Patrick Rooney</h1>
-        <h4>Software Engineer</h4>
+        <div id="title">
+          <h1>Patrick Rooney</h1>
+          <h4>Software Engineer</h4>
+        </div>
       </div>
-    </div>
-    <div id="about-me-section">
-      <!-- <h1>About</h1> -->
-      <div id="about-me-text-and-pic">
-        <ul id="about-me-text">
-          <!-- <h1>about</h1> -->
-          <li>
-            Patrick is a Brooklyn based software engineer with a background in
-            performing arts.
-          </li>
-          <li>A Recent graduate of Fullstack Academy.</li>
-          <li>Partook in the Future Code Fellowship Program.</li>
-          <li>
-            Passionate about web development and the future of AI technology.
-          </li>
-          <li>Values curiosity, creativity, and collaboration.</li>
-          <li>Chess enthusiast… but you’ll probably beat him.</li>
-        </ul>
-        <img src="beach-pic.jpeg" id="beach-pic" />
+      <div class="about-me-section">
+        <!-- <h1>About</h1> -->
+        <div id="about-me-text-and-pic">
+          <ul id="about-me-text">
+            <!-- <h1>about</h1> -->
+            <li>
+              Patrick is a Brooklyn based software engineer with a background in
+              performing arts.
+            </li>
+            <li>A Recent graduate of Fullstack Academy.</li>
+            <li>Partook in the Future Code Fellowship Program.</li>
+            <li>
+              Passionate about web development and the future of AI technology.
+            </li>
+            <li>Values curiosity, creativity, and collaboration.</li>
+            <li>Chess enthusiast… but you’ll probably beat him.</li>
+          </ul>
+          <img src="beach-pic.jpeg" id="beach-pic" />
+        </div>
       </div>
-
-
-
+      <div class="project-section">
         <div>
-          <button class = "project-selector">Rehearse</button>
-          <button class = "project-selector"> Diagon Alley Online</button>
-          <button class = "project-selector">Chewsy</button>
+          <button class="project-selector">Rehearse</button>
+          <button class="project-selector">Diagon Alley Online</button>
+          <button class="project-selector">Chewsy</button>
         </div>
         <div class="carousel">
-
-          <div class="carousel_track-container">
-
-          </div>
-
+          <div class="carousel_track-container"></div>
         </div>
-
-
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

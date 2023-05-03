@@ -140,8 +140,11 @@ const createCarousel = (fileNames) => {
 createCarousel(rehearseFileNames);
 
 function darkMode() {
-  let element = document.getElementsByClassName("opening-page");
-  element[0].classList.toggle("dark-mode");
+  if (document.body.classList.contains("dark-mode")) {
+    document.body.classList.remove("dark-mode");
+  } else {
+    document.body.classList.add("dark-mode");
+  }
 }
 
 const hover = (element) => {
@@ -194,6 +197,30 @@ const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
     nextButton.classList.remove("is-hidden");
   }
 };
+
+//section observer
+const nav = document.getElementsByTagName("nav");
+console.log(nav);
+const sectionOne = document.querySelector(".opening-page");
+const sectionOneOptions = {
+  rootMargin: "-500px 0px 0px 0px",
+};
+const sectionOneObserver = new IntersectionObserver(function (
+  entries,
+  sectionOneObserver
+) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      nav[0].classList.add("nav-scrolled");
+    } else {
+      nav[0].classList.remove("nav-scrolled");
+    }
+  });
+},
+sectionOneOptions);
+
+sectionOneObserver.observe(sectionOne);
+
 // when i click left move slides to left
 // prevButton.addEventListener("click", (e) => {
 //   let currentSlide = track.querySelector(".current-slide");
