@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
     <link rel="stylesheet" href="./styles.css" />
+
     <title>Patrick Rooney Portfolio</title>
   </head>
   <body>
@@ -20,13 +22,14 @@
         onmouseout="unhover(this)"
       >
         <img class="icon" id="home-img" src="icons/png/home-img.png" /><a
-          href="#title"
+          href="#dark-mode-button"
           >Home</a
         >
       </p>
       <p
         class="nav-links"
         id="about-me"
+
         onmouseover="hover(this)"
         onmouseout="unhover(this)"
       >
@@ -34,7 +37,8 @@
           class="icon"
           id="about-me-img"
           src="icons/png/about-me-img.png"
-        />About Me
+
+        /><a href="#about-me-section">About Me</a>
       </p>
       <p
         class="nav-links"
@@ -46,9 +50,9 @@
           class="icon"
           id="projects-img"
           src="icons/png/projects-img.png"
-        />Projects
+        /><a href = "#project-section" >Projects</a>
       </p>
-      <p
+      <!-- <p
         class="nav-links"
         id="skills"
         onmouseover="hover(this)"
@@ -59,15 +63,15 @@
           id="skills-img"
           src="icons/png/skills-img.png"
         />Skills
-      </p>
+      </p> -->
       <p
         class="nav-links"
         id="contact"
         onmouseover="hover(this)"
         onmouseout="unhover(this)"
       >
-        <img class="icon" id="contact-img" src="icons/png/contact-img.png" />Get
-        in touch
+        <img class="icon" id="contact-img" src="icons/png/contact-img.png" /><a href = "#contact-me">Get
+          in touch</a>
       </p>
     </nav>
     <div class="website">
@@ -81,12 +85,17 @@
           <h4>Software Engineer</h4>
         </div>
       </div>
-      <div class="about-me-section">
+      <div class="about-me-section" id = "about-me-section">
         <!-- <h1>About</h1> -->
         <div id="about-me-text-and-pic">
           <ul id="about-me-text">
             <!-- <h1>about</h1> -->
-            <li>
+            <p>      Patrick  is a software engineer and award-nominated actor based in Brooklyn, New York. He recently completed Fullstack Academy's highly selective Future Code Web Development Fellowship program full scholarship, where he gained proficiency the PERN stack, among other technologies.</p>
+            <p>Prior to his foray into tech, Patrick spent a decade honing his craft as an actor, performing in various plays and musicals,  including the Les Miserables National Tour and leading regional productions across the country. When he's not coding, Patrick can be found playing chess, running, baking bread, watching his beloved Chicago sports teams, and enjoying an IPA.</p>
+
+
+
+            <!-- <li>
               Patrick is a Brooklyn based software engineer with a background in
               performing arts.
             </li>
@@ -96,23 +105,48 @@
               Passionate about web development and the future of AI technology.
             </li>
             <li>Values curiosity, creativity, and collaboration.</li>
-            <li>Chess enthusiast… but you’ll probably beat him.</li>
+            <li>Chess enthusiast… but you’ll probably beat him.</li> -->
           </ul>
           <img src="beach-pic.jpeg" id="beach-pic" />
         </div>
       </div>
-      <div class="project-section">
+      <div class="project-section"  id ="project-section">
+        <h1 id = "project-title">Projects</h1>
         <div>
           <button class="project-selector">Rehearse</button>
           <button class="project-selector">Diagon Alley Online</button>
           <button class="project-selector">Chewsy</button>
         </div>
+        <p id = "project-description"></p>
         <div class="carousel">
           <div class="carousel_track-container"></div>
         </div>
       </div>
+      <!-- <div class="skills">
+        <h1>Skills</h1>
+        <div class="skill-boxes">
+          <div class="skill-box">
+            <h3>Frontend</h3>
+          </div>
+          <div class="skill-box">
+            <h3>Backend</h3>
+          </div>
+          <div class="skill-box">
+            <h3>Database</h3>
+          </div>
+        </div>
+      </div> -->
       <div class="container">
-        <h1>FormSubmit Demo</h1>
+        <div class="contact-links">
+          <h1 id="contact-me">Contact Me</h1>
+          <p>patrickrooney09@gmail.com</p>
+          <a href =
+          https://www.linkedin.com/in/patrick-rooney09/><img class="contact-me-icons" src="icons/png/001-linkedin.png" /></a>
+          <a  href ="https://github.com/patrickrooney09" ><img id = "github-link" class="contact-me-icons" src="icons/png/002-github-sign.png" /></a>
+          <a href = "https://www.instagram.com/prooney9/"><img class="contact-me-icons" src="icons/png/instagram.png" /></a>
+
+        </div>
+
         <form
           target="_blank"
           action="https://formsubmit.co/patrickrooney09@gmail.com"
@@ -149,13 +183,16 @@
               required
             ></textarea>
           </div>
-          <button type="submit" class="btn btn-lg btn-dark btn-block">
-            Submit Form
-          </button>
+          <button type="submit" id="send-message-button">Send Message</button>
         </form>
+        <!-- <video autoplay loop muted width = "500" src="gifs/giphy.mp4" type="video/mp4"> -->
+          <!-- <source src="gifs/giphy.mp4" type="video/mp4"> -->
+          Your browser does not support the video tag.
+        <!-- </video> -->
       </div>
+      <!-- <footer>footer</footer> -->
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" async></script>
   </body>
 </html>

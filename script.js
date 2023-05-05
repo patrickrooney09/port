@@ -13,28 +13,43 @@ const setSlidePosition = (slide, index) => {
 };
 
 const rehearseFileNames = [
-  "project-images-and-gifs/rehearse-home-page.png",
-  "project-images-and-gifs/rehearse-build-scene.png",
-  "project-images-and-gifs/rehearse-run-lines.png",
+  "gifs/rehearse/rehearsehomescreengif.mp4",
+  "gifs/rehearse/buildscriptrehearsegif.mp4",
+  "gifs/rehearse/buildscenerehearsegif.mp4",
+  "gifs/rehearse/runlinesrehearse.mp4",
 ];
+
+const rehearseDescription =
+  "Rehearse is a line learner app for actors. It is also a fantastic study companion. Built on custom flashcard technology to assist the line memorization process, Rehearse is ideal for anyone learning lines, a new language, or studying vocabulary.";
 
 const diagonAlleyFileNames = [
-  "project-images-and-gifs/diagon-alley-home-page.png",
-  "project-images-and-gifs/diagon-alley-cart-and-checkout.png",
-  "project-images-and-gifs/diagon-alley-shop.png",
+  "gifs/diagonalleyonline/diagonalleyhomepage.mp4",
+  "gifs/diagonalleyonline/diagonalleycheckout.mp4",
 ];
+const diagonAlleyDescription =
+  "We solemnly swear we are up to no good. Bringing the magical products of Harry Potter to the muggle world. A full scale e-commerce app. Olivander's now open. Mischeif managed.";
 
 const chewsyFileNames = ["project-images-and-gifs/chewsy-pages.png"];
+const chewsyDescription =
+  "Chewsy is an iOS app for indecisive foodies. Build on the back of Yelp's powerful API, Chewsy recommends a restaurant by collecting the dietary preferences and restrictions of members in a group for their next event.";
 
-const createCarousel = (fileNames) => {
+const createCarousel = (fileNames, description) => {
   if (document.querySelector(".carousel_track") !== null) {
     document.querySelector(".carousel_track").remove();
     document.querySelector(".carousel_nav").remove();
-    console.log(document.querySelector(".carousel_track"));
-    console.log(document.querySelector(".carousel_nav"));
     document.querySelector(".carousel_button--left").remove();
     document.querySelector(".carousel_button--right").remove();
   }
+
+  const projectDescription = document.getElementById("project-description");
+
+  if (projectDescription.classList.contains("slide-in")) {
+    console.log("hello");
+    projectDescription.classList.remove("slide-in");
+  }
+  projectDescription.innerText = description;
+  projectDescription.classList.add("slide-in");
+  console.log(projectDescription);
 
   const prevButtonImage = document.createElement("img");
   prevButtonImage.src = "icons/png/back.png";
@@ -68,15 +83,29 @@ const createCarousel = (fileNames) => {
     const carousel = document.querySelector(".carousel_track");
     const carouselSlide = document.createElement("li");
 
-    const img = document.createElement("img");
-    img.src = currentImage;
-    img.setAttribute("class", "carousel-image");
+    // const img = document.createElement("img");
+    // img.src = currentImage;
+    // img.setAttribute("class", "carousel-image");
+    const video = document.createElement("video");
+    // const source = document.createElement("source");
+    // source.setAttribute("src", currentImage);
+    // source.setAttribute("type", "video/mp4");
+    video.muted = true;
+    video.loop = true;
+    video.setAttribute("src", currentImage);
+
+    video.setAttribute("autoplay", "");
+    // video.setAttribute("playsinline", "");
+
+    video.setAttribute("preload", "auto");
+    video.setAttribute("class", "carousel-image");
+    // video.appendChild(source);
 
     carouselSlide.setAttribute("class", "carousel_slide");
     if (index === 0) {
       carouselSlide.classList.add("current-slide");
     }
-    carouselSlide.appendChild(img);
+    carouselSlide.appendChild(video);
 
     carousel.appendChild(carouselSlide);
 
@@ -137,7 +166,7 @@ const createCarousel = (fileNames) => {
     hideShowArrows(slides, prevButton, nextButton, previousIndex);
   });
 };
-createCarousel(rehearseFileNames);
+createCarousel(rehearseFileNames, rehearseDescription);
 
 function darkMode() {
   if (document.body.classList.contains("dark-mode")) {
@@ -161,13 +190,13 @@ const projectButtons = [
 ].forEach((currentButton) => {
   currentButton.addEventListener("click", () => {
     if (currentButton.innerText === "Diagon Alley Online") {
-      createCarousel(diagonAlleyFileNames);
+      createCarousel(diagonAlleyFileNames, diagonAlleyDescription);
     }
     if (currentButton.innerText === "Rehearse") {
-      createCarousel(rehearseFileNames);
+      createCarousel(rehearseFileNames, rehearseDescription);
     }
     if (currentButton.innerText === "Chewsy") {
-      createCarousel(chewsyFileNames);
+      createCarousel(chewsyFileNames, chewsyDescription);
     }
   });
 });
