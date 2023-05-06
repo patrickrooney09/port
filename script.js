@@ -29,7 +29,14 @@ const diagonAlleyFileNames = [
 const diagonAlleyDescription =
   "We solemnly swear we are up to no good. Bringing the magical products of Harry Potter to the muggle world. A full scale e-commerce app. Olivander's now open. Mischeif managed.";
 
-const chewsyFileNames = ["project-images-and-gifs/chewsy-pages.png"];
+const chewsyFileNames = [
+  "gifs/chewsy/chewsylogin.mp4",
+  "gifs/chewsy/addtogroup.mp4",
+
+  "gifs/chewsy/chewsycreategroup.mp4",
+  "gifs/chewsy/chewsemomentchewsy.mp4",
+  "gifs/chewsy/editprofile.mp4",
+];
 const chewsyDescription =
   "Chewsy is an iOS app for indecisive foodies. Build on the back of Yelp's powerful API, Chewsy recommends a restaurant by collecting the dietary preferences and restrictions of members in a group for their next event.";
 
