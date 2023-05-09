@@ -366,3 +366,117 @@ input {
   background-color: white;
   border-radius: 50%;
 }
+
+@media only screen and (max-width: 500px) {
+  * {
+  }
+  body {
+    background-image: none;
+    width: 100%;
+  }
+
+  nav {
+    display: none;
+  }
+
+  #title {
+    position: relative;
+    top: 0;
+    left: 25%;
+    width: 200px;
+    font-size: 14px;
+  }
+
+  .website {
+    width: 100%;
+  }
+
+  #about-me-section {
+    width: 100%;
+  }
+  #project-section {
+    width: 100%;
+  }
+
+  .carousel {
+    width: 100%;
+  }
+  .carousel-slide {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  beach-pic {
+    width: 100%;
+    margin: 0px;
+  }
+  #about-me-text-and-pic {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+
+    margin: 0px;
+  }
+
+  .opening-page {
+    background-image: url("IMG_4146.JPG");
+    width: 100%;
+    max-width: 100%;
+
+    background-size: contain;
+    background-position: center;
+    min-height: 400px;
+  }
+  .project-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #project-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #project-description {
+    padding: 10px;
+    margin: 0px;
+    font-size: 14px;
+  }
+  .carousel_track-container {
+    height: 250px;
+  }
+  .carousel_nav {
+    justify-content: space-around;
+  }
+  .carousel_indicator {
+    width: 25px;
+    height: 25px;
+  }
+
+  .project-section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .carousel {
+    height: 100px;
+  }
+  .website {
+    height: 100%;
+    width: 100%;
+  }
+
+  .container {
+    margin-top: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .carousel_button {
+    display: none;
+  }
+  textarea {
+    width: 300px;
+  }
+}

@@ -16,7 +16,7 @@ const rehearseFileNames = [
 ];
 
 const rehearseDescription =
-  "Rehearse is a line learner app for actors. It is also a fantastic study companion. Built on custom flashcard technology to assist the line memorization process, Rehearse is ideal for anyone learning lines, a new language, or studying vocabulary.";
+  "Rehearse is a line learner app for actors. It is also a fantastic study companion. Built on custom flashcard technology to assist in the line memorization process, Rehearse is ideal for anyone learning lines, a new language, or studying vocabulary.";
 
 const diagonAlleyFileNames = [
   "gifs/diagonalleyonline/diagonalleyhomepage.mp4",
