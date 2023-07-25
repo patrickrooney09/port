@@ -370,6 +370,23 @@ input {
   border-radius: 50%;
 }
 
+.blog-section {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog-image {
+  height: 450px;
+}
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media only screen and (max-width: 650px) {
   * {
   }
@@ -416,7 +433,7 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     font-size: 14px;
 
     margin: 0px;
@@ -501,5 +518,22 @@ input {
   #send-message-button {
     background-color: white;
     color: black;
+  }
+  #dev-blog {
+    margin-top: 500px;
+  }
+  iframe {
+    max-width: 90%;
+  }
+  img {
+    max-width: 90%;
+  }
+  .blog-post {
+    max-width: 90%;
+    padding-left: 20px;
+  }
+  /* makes the header of the blog post more center CHANGE THIS LATER */
+  h3 {
+    margin-left: 20px;
   }
 }

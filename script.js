@@ -235,3 +235,76 @@ const sectionOneObserver = new IntersectionObserver(function (
 sectionOneOptions);
 
 sectionOneObserver.observe(sectionOne);
+
+// blog post functions
+
+const blogPosts = [
+  {
+    title:
+      "eCommerce Apps: Persisting Guest Cart in Session Storage using React/Redux",
+    date: "March 21st, 2023",
+    content: `
+          <div class = "blog-post"><p>When persisting Guest Cart Storage (ie: storage that is not attached to a user account on your platform or database), we must use the Session Storage within our browser. I stumbled upon this problem while building out an eCommerce app using React and Redux. Every time I refreshed the page after selecting items to go into my guest cart, the items would disappear. </p><iframe src="https://giphy.com/embed/TjhWQnDUv2iJZPn1ae" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/TjhWQnDUv2iJZPn1ae">via GIPHY</a></p><p>Never fear! I am here to assist. For this project I am using a basic boilerplate Redux slice.</p><p>First let’s demonstrate the problem:
+          Here, we can successfully add the items to the guest cart by clicking on the “+” button. As you can see- they appear in the cart. Now, when we refresh, they disappear.</p><iframe src="https://giphy.com/embed/AbZ6Oqjpxj46VSO6Z7" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/AbZ6Oqjpxj46VSO6Z7">via GIPHY</a></p><p>Hmm… what to doo? Let’s take a look at our file <code>guestCartSlice.js</code> and see what is happening.</p> <img src = gifs/blog/SessionStoragePost/overview1.png class="blog-image"><p>Here's what's happening in this file:</p>
+          <ul>
+              <li>-Importing our createSlice function from react/redux toolkit.</li>
+              <li>-Setting our initial state to an empty array.</li>
+              <li>-Creating our slice and adding simple reducers like "addBook" and "removeBook". These reducers perform as described: adding or removing a book from the guest cart.</li>
+              <li>-Exporting the selectGuestCart function to return the state of the guestCart.</li>
+              <li>-Exporting "addBook" and "removeBook" as guestCartSlice actions.</li>
+              <li>-Finally, exporting our guestCartSlice.reducer.</li>
+          </ul>
+          <h4>We can fix this disappearing act in a few simple steps!</h4>
+    <ol class = "blog-post">
+        <li>Let's add a line of code to our <strong>addBook</strong> function - not only do we want to set the book in state, but we also want to set it in our session storage.
+            <ul>
+                <li>After <code>state.push(action.payload)</code>, we're going to add <code>sessionStorage.setItem(action.payload.title, JSON.stringify(action.payload))</code> - this will set up key-value pairs within our session storage.</li>
+            </ul>
+        </li>
+        <img src = gifs/blog/SessionStoragePost/addBookReducer.png class="blog-image">
+        <li>Now we want to change our initialState to something that can communicate with SessionStorage. To do this, we will want to insert a check to see if there is anything within Session storage.</li>
+        <li>Let's change our initialState from an empty array to a ternary operator:
+            <br>
+            <code>const initialState = sessionStorage !== null ? Object.values(sessionStorage).map((currentBook) => { return JSON.parse(currentBook) }) : [];</code>
+        </li>
+        <img src = gifs/blog/SessionStoragePost/SessionStorageTernary.png class="blog-image">
+        <li>Now, save the file and check to see if all is working. You should now see data persist in Session Storage!</li>
+        <img src = gifs/blog/SessionStoragePost/sessionStorageDemonstration.png class="blog-image">
+        <p>Check out my live demonstration on YouTube. Thanks for reading!</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/igHH0Db7ID4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    </ol>
+    </div>
+      `,
+  },
+
+  // More blog posts...
+];
+
+function displayBlogPosts() {
+  const blogSection = document.getElementById("blog-posts");
+
+  blogPosts.forEach((post) => {
+    const blogPostDiv = document.createElement("div");
+    blogPostDiv.classList.add("blog-post");
+
+    const titleElement = document.createElement("h3");
+    titleElement.textContent = post.title;
+
+    const dateElement = document.createElement("h4");
+    dateElement.textContent = post.date;
+
+    // Create a container div for the content and image
+    const contentContainer = document.createElement("div");
+    contentContainer.innerHTML = post.content;
+
+    blogPostDiv.appendChild(dateElement);
+    blogPostDiv.appendChild(titleElement);
+
+    blogPostDiv.appendChild(contentContainer);
+
+    blogSection.appendChild(blogPostDiv);
+  });
+}
+
+window.addEventListener("load", displayBlogPosts);
