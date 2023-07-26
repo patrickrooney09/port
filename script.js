@@ -15,15 +15,13 @@ const rehearseFileNames = [
   "gifs/rehearse/runlinesrehearse.mp4",
 ];
 
-const rehearseDescription =
-  "Rehearse is a line learner app for actors. It is also a fantastic study companion. Built on custom flashcard technology to assist in the line memorization process, Rehearse is ideal for anyone learning lines, a new language, or studying vocabulary.";
+const rehearseDescription = `Rehearse is a line learner app for actors. It is also a fantastic study companion. Built on custom flashcard technology to assist in the line memorization process, Rehearse is ideal for anyone learning lines, a new language, or studying vocabulary. <a href="https://rehearsal-de93d.web.app/"><strong>Check it out here</strong></a>`;
 
 const diagonAlleyFileNames = [
   "gifs/diagonalleyonline/diagonalleyhomepage.mp4",
   "gifs/diagonalleyonline/diagonalleycheckout.mp4",
 ];
-const diagonAlleyDescription =
-  "We solemnly swear we are up to no good. Bringing the magical products of Harry Potter to the muggle world. A full scale e-commerce app. Olivander's now open. Mischeif managed.";
+const diagonAlleyDescription = `We solemnly swear we are up to no good. Bringing the magical products of Harry Potter to the muggle world. A full scale e-commerce app. Olivander's now open. Mischeif managed. Check it out at`;
 
 const chewsyFileNames = [
   "gifs/chewsy/chewsylogin.mp4",
@@ -49,7 +47,7 @@ const createCarousel = (fileNames, description) => {
   if (projectDescription.classList.contains("slide-in")) {
     projectDescription.classList.remove("slide-in");
   }
-  projectDescription.innerText = description;
+  projectDescription.innerHTML = description;
   projectDescription.classList.add("slide-in");
 
   const prevButtonImage = document.createElement("img");
@@ -268,7 +266,7 @@ const blogPosts = [
             <code>const initialState = sessionStorage !== null ? Object.values(sessionStorage).map((currentBook) => { return JSON.parse(currentBook) }) : [];</code>
         </li>
         <img src = gifs/blog/SessionStoragePost/SessionStorageTernary.png class="blog-image">
-        <li>Now, save the file and check to see if all is working. You should now see data persist in Session Storage!</li>
+        <li>Now, save the file and check to see if all is working. You should now see data persist in Session Storage and refreshing the page retains the items in your guest cart!</li>
         <img src = gifs/blog/SessionStoragePost/sessionStorageDemonstration.png class="blog-image">
         <p>Check out my live demonstration on YouTube. Thanks for reading!</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/igHH0Db7ID4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
