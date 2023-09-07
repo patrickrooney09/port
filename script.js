@@ -8,6 +8,13 @@ const setSlidePosition = (slide, index) => {
   slide.style.left = slideWidth * index + "px";
 };
 
+const chatGPTFileNames = [
+  "gifs/chatgptclone/ChatGPTClone1.mp4",
+  "gifs/chatgptclone/ChatGPTClone2.mp4",
+];
+
+const chatGPTDescription = `Tutorial Project: In an effort to gain a deep understanding of Firebase, Next.js, and Vercel, and the OpenAI API, I created a ChatGPT Clone. <a href="https://chatgpt-messenger-ochre.vercel.app/"><strong>Ask it anything here!</strong></a> `;
+
 const rehearseFileNames = [
   "gifs/rehearse/rehearsehomescreengif.mp4",
   "gifs/rehearse/buildscriptrehearsegif.mp4",
@@ -21,7 +28,7 @@ const diagonAlleyFileNames = [
   "gifs/diagonalleyonline/diagonalleyhomepage.mp4",
   "gifs/diagonalleyonline/diagonalleycheckout.mp4",
 ];
-const diagonAlleyDescription = `We solemnly swear we are up to no good. Bringing the magical products of Harry Potter to the muggle world. A full scale e-commerce app. Olivander's now open. Mischeif managed. Check it out at`;
+const diagonAlleyDescription = `We solemnly swear we are up to no good. Bringing the magical products of Harry Potter to the muggle world. A full scale e-commerce app. Olivander's now open. Mischeif managed. `;
 
 const chewsyFileNames = [
   "gifs/chewsy/chewsylogin.mp4",
@@ -181,6 +188,9 @@ const projectButtons = [
     }
     if (currentButton.innerText === "Chewsy") {
       createCarousel(chewsyFileNames, chewsyDescription);
+    }
+    if (currentButton.innerText === "ChatGPT Clone") {
+      createCarousel(chatGPTFileNames, chatGPTDescription);
     }
   });
 });
